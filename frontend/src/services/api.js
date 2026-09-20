@@ -1,6 +1,6 @@
 // const API_URL = "http://10.11.37.135:5000";
-const API_URL = "http://localhost:5000";
-
+// const API_URL = "http://localhost:5000";
+const API_URL = "https://musicuniverse-gn53.onrender.com";
 
 export const getSongs = async () => {
     const response = await fetch(`${API_URL}/api/songs`);
