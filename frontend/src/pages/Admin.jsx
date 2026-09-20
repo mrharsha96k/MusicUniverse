@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { getSongs } from "../services/api";
 
+const API_URL = "https://musicuniverse-gn53.onrender.com";
+
 function Admin() {
 
   // =====================================================
@@ -71,7 +73,7 @@ function Admin() {
     try {
 
       const response = await fetch(
-        "http://localhost:5000/api/artists"
+        "https://musicuniverse-gn53.onrender.com/api/artists"
       );
 
       if (!response.ok) {
@@ -104,7 +106,7 @@ function Admin() {
       try {
 
           const response = await fetch(
-              "http://localhost:5000/api/albums"
+              "https://musicuniverse-gn53.onrender.com/api/albums"
           );
 
           if (!response.ok) {
@@ -183,7 +185,7 @@ function Admin() {
 
 
       const response = await fetch(
-        "http://localhost:5000/api/upload/song",
+        "https://musicuniverse-gn53.onrender.com/api/upload/song",
         {
           method: "POST",
           body: formData,
@@ -279,7 +281,7 @@ function Admin() {
 
       const imageResponse =
         await fetch(
-          "http://localhost:5000/api/upload/image",
+          "https://musicuniverse-gn53.onrender.com/api/upload/image",
           {
             method: "POST",
             body: imageFormData,
@@ -314,7 +316,7 @@ function Admin() {
 
       const artistResponse =
         await fetch(
-          "http://localhost:5000/api/artists",
+          "https://musicuniverse-gn53.onrender.com/api/artists",
           {
             method: "POST",
 
@@ -442,7 +444,7 @@ function Admin() {
 
 
           const imageResponse = await fetch(
-              "http://localhost:5000/api/upload/album-image",
+              "https://musicuniverse-gn53.onrender.com/api/upload/album-image",
               {
                   method: "POST",
                   body: imageFormData,
@@ -470,7 +472,7 @@ function Admin() {
           // -----------------------------
 
           const albumResponse = await fetch(
-              "http://localhost:5000/api/albums",
+              "https://musicuniverse-gn53.onrender.com/api/albums",
               {
                   method: "POST",
 
