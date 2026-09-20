@@ -1,0 +1,455 @@
+/* =====================================================
+   SEARCH PAGE
+===================================================== */
+
+.search-page {
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    padding: 90px 60px 140px;
+
+    background: #0f172a;
+    color: white;
+}
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.search-page h1 {
+    max-width: 900px;
+
+    margin: 0 auto 25px;
+
+    font-size: 42px;
+    font-weight: 700;
+
+    color: white;
+}
+
+
+/* =====================================================
+   SEARCH INPUT
+===================================================== */
+
+.search-container {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    position: relative;
+}
+
+
+.search-box {
+    width: 100%;
+    height: 54px;
+
+    box-sizing: border-box;
+
+    padding: 0 22px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 30px;
+
+    outline: none;
+
+    background: rgba(30, 41, 59, 0.95);
+
+    color: white;
+
+    font-size: 16px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.search-box::placeholder {
+    color: #94a3b8;
+}
+
+.search-box:hover {
+    background: #202d42;
+
+    border-color: rgba(139, 92, 246, 0.25);
+}
+
+.search-box:focus {
+    background: #202d42;
+
+    border-color: #7c5cff;
+
+    box-shadow:
+        0 0 0 3px rgba(124, 92, 255, 0.12),
+        0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =====================================================
+   SEARCH RESULTS
+===================================================== */
+
+.search-results {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 45px auto 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+.search-results h2 {
+    margin: 0 0 8px;
+
+    color: white;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   SONG CARD
+===================================================== */
+
+.search-song {
+    width: 100%;
+    min-height: 88px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 11px 15px;
+
+    background: #1e293b;
+
+    border: 1px solid transparent;
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.search-song:hover {
+    background: #26354b;
+
+    border-color: rgba(139, 92, 246, 0.35);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.28);
+}
+
+
+/* =====================================================
+   ALBUM IMAGE
+===================================================== */
+
+.search-song img {
+    width: 68px;
+    height: 68px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 5px 16px rgba(0, 0, 0, 0.32);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.search-song:hover img {
+    transform: scale(1.04);
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.42);
+}
+
+/* =====================================================
+   SONG DETAILS
+===================================================== */
+
+.song-details {
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.song-details h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.song-details p {
+    margin: 5px 0 0;
+
+    color: #a7b2c4;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    line-height: 1.3;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.song-separator {
+    color: #64748b;
+
+    margin: 0 3px;
+}
+
+
+.song-album {
+    color: #94a3b8;
+}
+
+
+/* =====================================================
+   PLAY BUTTON
+===================================================== */
+
+.play-search-btn {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c5cff,
+            #6d5dfc
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.play-search-btn:hover {
+    transform: scale(1.09);
+
+    box-shadow:
+        0 0 22px rgba(124, 92, 255, 0.55);
+}
+
+
+/* =====================================================
+   CURRENT / ACTIVE SONG
+===================================================== */
+
+.search-song.active {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(124, 92, 255, 0.16),
+            rgba(30, 41, 59, 0.95)
+        );
+
+    border-color:
+        rgba(139, 92, 246, 0.65);
+
+    box-shadow:
+        0 0 20px rgba(124, 92, 255, 0.10);
+}
+
+
+.search-song.active img {
+    box-shadow:
+        0 0 18px rgba(124, 92, 255, 0.28);
+}
+
+
+.play-search-btn.active {
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #7c5cff
+        );
+
+    box-shadow:
+        0 0 20px rgba(139, 92, 246, 0.62);
+}
+
+/* =====================================================
+   LOADING / EMPTY MESSAGE
+===================================================== */
+
+.search-results > p {
+    margin: 15px 0;
+
+    color: #94a3b8;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .search-page {
+        padding: 70px 30px 130px;
+    }
+
+    .search-page h1 {
+        font-size: 36px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .search-page {
+        padding: 60px 18px 130px;
+    }
+
+    .search-page h1 {
+        font-size: 30px;
+    }
+
+    .search-results {
+        margin-top: 35px;
+    }
+
+    .search-song {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .search-song img {
+        width: 58px;
+        height: 58px;
+    }
+
+    .song-details h3 {
+        font-size: 15px;
+    }
+
+    .song-details p {
+        font-size: 12px;
+    }
+
+    .play-search-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+}
+/* =====================================================
+   ALBUM INFORMATION
+===================================================== */
+
+.song-separator {
+    color: #64748b;
+    margin: 0 3px;
+}
+
+
+.song-album {
+    color: #94a3b8;
+}
+
+
+/* =====================================================
+   SONG DURATION
+===================================================== */
+
+.song-duration {
+    flex-shrink: 0;
+
+    width: 45px;
+
+    margin-right: 2px;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    text-align: right;
+}
+
+
+/* =====================================================
+   SEARCH CARD LAYOUT
+===================================================== */
+
+.song-details {
+    flex: 1;
+    min-width: 0;
+}

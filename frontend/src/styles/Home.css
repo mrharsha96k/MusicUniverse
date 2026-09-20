@@ -1,0 +1,2113 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+/* =========================================================
+   MUSICUNIVERSE HOME
+   PREMIUM DARK MUSIC UI
+   ========================================================= */
+
+.home-page {
+    --bg: #080b16;
+    --bg-soft: #0d1222;
+    --surface: #12192b;
+    --surface-hover: #182139;
+    --surface-light: #1c263d;
+
+    --purple: #8b5cf6;
+    --purple-light: #a78bfa;
+    --pink: #ec4899;
+    --green: #22e584;
+    --blue: #38bdf8;
+
+    --text: #f8fafc;
+    --text-soft: #b7bfd1;
+    --text-muted: #78839b;
+
+    --border: rgba(255,255,255,.08);
+    --border-hover: rgba(139,92,246,.35);
+
+    width: 100%;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 85% 5%,
+            rgba(91,52,180,.12),
+            transparent 28%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family:
+        "Inter",
+        system-ui,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.home-loading {
+    min-height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+
+    color: var(--text-muted);
+}
+
+.loading-spinner {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: 3px solid rgba(255,255,255,.08);
+    border-top-color: var(--purple);
+
+    animation:
+        spin .8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 620px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+
+    z-index: -3;
+
+    background:
+        radial-gradient(
+            ellipse at 20% 45%,
+            rgba(124,92,255,.22),
+            transparent 45%
+        ),
+
+        radial-gradient(
+            ellipse at 82% 25%,
+            rgba(236,72,153,.14),
+            transparent 40%
+        ),
+
+        radial-gradient(
+            ellipse at 55% 100%,
+            rgba(56,189,248,.06),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #090c18,
+            #10152a
+        );
+}
+
+.hero-grid {
+    position: absolute;
+    inset: 0;
+
+    z-index: -2;
+
+    opacity: 0.18;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 60px 60px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO INNER
+   ========================================================= */
+
+.hero-inner {
+    width:
+        min(
+            1400px,
+            calc(100% - 96px)
+        );
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 80px;
+
+    padding:
+        100px 0
+        90px;
+}
+
+.hero-copy {
+    max-width: 650px;
+
+    animation:
+        heroContentIn .8s
+        cubic-bezier(.2,.8,.2,1)
+        both;
+}
+
+@keyframes heroContentIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 18px;
+
+    color: var(--purple-light);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: .22em;
+}
+
+.hero-eyebrow::before {
+    content: "";
+
+    width: 25px;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--pink)
+        );
+}
+
+.hero h1 {
+    margin: 0;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size:
+        clamp(
+            48px,
+            6vw,
+            82px
+        );
+
+    line-height: .98;
+
+    letter-spacing: -.045em;
+
+    font-weight: 700;
+}
+
+.hero h1 span {
+    background:
+        linear-gradient(
+            90deg,
+            #a78bfa,
+            #e879f9,
+            #f472b6
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.hero-sub {
+    max-width: 520px;
+
+    margin:
+        28px 0 34px;
+
+    color: var(--text-soft);
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   HERO STATS
+   ========================================================= */
+
+.hero-stats {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 28px;
+}
+
+.hero-stat {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+}
+
+.hero-stat > svg {
+    color: var(--purple-light);
+    font-size: 17px;
+}
+
+.hero-stat div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-stat strong {
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 22px;
+    line-height: 1.1;
+}
+
+.hero-stat span {
+    margin-top: 4px;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+.hero-stat-divider {
+    width: 1px;
+    height: 34px;
+
+    background: var(--border);
+}
+
+
+/* =========================================================
+   NOW PLAYING
+   ========================================================= */
+
+.hero-now-playing {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    margin: 0 0 28px;
+}
+
+.hero-now-playing span {
+    color: var(--text-muted);
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+    letter-spacing: .12em;
+}
+
+.hero-now-playing strong {
+    color: var(--text-soft);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.hero-btn,
+.hero-secondary-btn {
+    border: none;
+
+    cursor: pointer;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-weight: 600;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease,
+        border-color .25s ease;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        14px 24px;
+
+    border-radius: 30px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--purple),
+            var(--pink)
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(124,92,255,.22);
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 38px
+        rgba(124,92,255,.34);
+}
+
+.hero-secondary-btn {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        13px 21px;
+
+    border-radius: 30px;
+
+    color: var(--text-soft);
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid var(--border);
+}
+
+.hero-secondary-btn:hover {
+    color: white;
+
+    border-color:
+        var(--border-hover);
+
+    background:
+        rgba(139,92,246,.08);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO ARTWORK
+   ========================================================= */
+
+.hero-art-stack {
+    position: relative;
+
+    width: 480px;
+    height: 440px;
+
+    flex-shrink: 0;
+}
+
+.hero-art-card {
+    position: absolute;
+
+    width: 270px;
+    aspect-ratio: 1;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    box-shadow:
+        0 30px 70px
+        rgba(0,0,0,.5);
+
+    background:
+        var(--surface);
+}
+
+.hero-art-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.hero-art-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.16),
+            transparent 35%,
+            rgba(0,0,0,.22)
+        );
+}
+
+.hero-art-card-0 {
+    left: 100px;
+    top: 40px;
+
+    z-index: 3;
+
+    transform: rotate(-5deg);
+
+    animation:
+        heroCardMain
+        6s
+        ease-in-out
+        infinite;
+}
+
+.hero-art-card-1 {
+    left: 0;
+    top: 115px;
+
+    z-index: 2;
+
+    transform:
+        rotate(-14deg)
+        scale(.88);
+
+    opacity: .8;
+
+    animation:
+        heroCardLeft
+        7s
+        ease-in-out
+        infinite;
+}
+
+.hero-art-card-2 {
+    right: 0;
+    top: 125px;
+
+    z-index: 1;
+
+    transform:
+        rotate(10deg)
+        scale(.84);
+
+    opacity: .7;
+
+    animation:
+        heroCardRight
+        7.5s
+        ease-in-out
+        infinite;
+}
+
+@keyframes heroCardMain {
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(-2deg);
+    }
+}
+
+@keyframes heroCardLeft {
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-14deg)
+            scale(.88);
+    }
+
+    50% {
+        transform:
+            translateY(10px)
+            rotate(-11deg)
+            scale(.9);
+    }
+}
+
+@keyframes heroCardRight {
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(10deg)
+            scale(.84);
+    }
+
+    50% {
+        transform:
+            translateY(-8px)
+            rotate(13deg)
+            scale(.86);
+    }
+}
+
+
+/* =========================================================
+   HERO ORBITS
+   ========================================================= */
+
+.hero-orbit {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(139,92,246,.12);
+
+    pointer-events: none;
+}
+
+.orbit-one {
+    width: 440px;
+    height: 440px;
+
+    left: 25px;
+    top: 0;
+
+    animation:
+        orbitSpin
+        30s
+        linear
+        infinite;
+}
+
+.orbit-two {
+    width: 330px;
+    height: 330px;
+
+    left: 80px;
+    top: 55px;
+
+    border-color:
+        rgba(236,72,153,.10);
+
+    animation:
+        orbitSpinReverse
+        24s
+        linear
+        infinite;
+}
+
+@keyframes orbitSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbitSpinReverse {
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.home-section {
+    width:
+        min(
+            1500px,
+            calc(100% - 72px)
+        );
+
+    margin:
+        0 auto;
+
+    padding:
+        58px 0;
+}
+
+.section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+}
+
+.section-kicker {
+    display: block;
+
+    margin: 0 0 8px 0;
+    padding: 0;
+
+    color: var(--purple-light);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: .18em;
+
+    white-space: nowrap;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    margin: 0;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 27px;
+
+    font-weight: 600;
+
+    letter-spacing: -.02em;
+}
+
+.section-title svg {
+    color: var(--purple-light);
+
+    font-size: 21px;
+}
+
+.section-count {
+    color: var(--text-muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SECTION LINK
+   ========================================================= */
+
+.section-link {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    border: none;
+    background: transparent;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color .2s ease,
+        gap .2s ease;
+}
+
+.section-link:hover {
+    color: white;
+    gap: 12px;
+}
+
+.section-link svg {
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   SONG ROW
+   IMPORTANT: HORIZONTAL
+   ========================================================= */
+
+.home-page .song-row {
+    display: flex;
+
+    flex-wrap: nowrap;
+
+    align-items: stretch;
+
+    gap: 22px;
+
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding:
+        5px 4px 18px;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(139,92,246,.45)
+        transparent;
+}
+.home-page {
+    /* ...existing --bg, --purple, etc. vars stay ... */
+    --container-max: 1500px;
+    --container-pad: 36px; /* per side */
+}
+
+.home-page .song-row::-webkit-scrollbar {
+    height: 6px;
+}
+
+.home-page .song-row::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.home-page .song-row::-webkit-scrollbar-thumb {
+    background:
+        rgba(139,92,246,.45);
+
+    border-radius: 20px;
+}
+
+.home-page .song-row > .song-card {
+    flex:
+        0 0 250px;
+
+    width: 250px;
+    min-width: 250px;
+    max-width: 250px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+    min-height: 220px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px dashed
+        var(--border);
+
+    border-radius: 18px;
+
+    color: var(--text-muted);
+}
+
+.empty-state svg {
+    margin-bottom: 14px;
+
+    color: var(--purple-light);
+
+    font-size: 30px;
+}
+
+.empty-state h3 {
+    margin:
+        0 0 6px;
+
+    color: var(--text-soft);
+}
+
+.empty-state p {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   GENRE GRID
+   ========================================================= */
+
+.genre-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                220px,
+                1fr
+            )
+        );
+
+    gap: 16px;
+}
+
+.genre-tile {
+    position: relative;
+
+    min-height: 145px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    padding: 22px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius: 20px;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 19px;
+    font-weight: 600;
+
+    text-align: left;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+.genre-tile::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .35;
+
+    transition:
+        transform .5s ease;
+}
+
+.genre-tile:hover {
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(0,0,0,.25);
+
+    border-color:
+        rgba(255,255,255,.18);
+}
+
+.genre-tile:hover::before {
+    transform:
+        scale(1.15);
+}
+
+.genre-tile > * {
+    position: relative;
+
+    z-index: 1;
+}
+
+.genre-tile svg:first-child {
+    position: absolute;
+
+    top: 22px;
+    left: 22px;
+
+    font-size: 27px;
+
+    opacity: .8;
+}
+
+.genre-tile svg:last-child {
+    font-size: 13px;
+
+    opacity: .7;
+}
+
+.genre-tile-0 {
+    background:
+        linear-gradient(
+            135deg,
+            #6941c6,
+            #a855f7
+        );
+}
+
+.genre-tile-1 {
+    background:
+        linear-gradient(
+            135deg,
+            #be3569,
+            #ec4899
+        );
+}
+
+.genre-tile-2 {
+    background:
+        linear-gradient(
+            135deg,
+            #087f5b,
+            #16a36f
+        );
+}
+
+.genre-tile-3 {
+    background:
+        linear-gradient(
+            135deg,
+            #176ca3,
+            #38bdf8
+        );
+}
+
+.genre-tile-4 {
+    background:
+        linear-gradient(
+            135deg,
+            #a05a12,
+            #e58a28
+        );
+}
+
+.genre-tile-active {
+    box-shadow:
+        0 0 0 2px
+        rgba(255,255,255,.8),
+
+        0 15px 35px
+        rgba(139,92,246,.2);
+}
+
+
+/* =========================================================
+   ARTIST ROW
+   IMPORTANT: HORIZONTAL
+   ========================================================= */
+
+.home-page .artist-row {
+    display: grid;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: 22px;
+
+    width: 100%;
+
+    padding: 5px 4px 22px;
+
+    box-sizing: border-box;
+}
+
+.home-page .artist-row::-webkit-scrollbar {
+    height: 6px;
+}
+
+.home-page .artist-row::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.home-page .artist-row::-webkit-scrollbar-thumb {
+    background:
+        rgba(139,92,246,.45);
+
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   ARTIST CARD
+   ========================================================= */
+
+.home-page .artist-card {
+    width: 100%;
+    min-width: 0;
+
+    padding: 18px 12px 16px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30,41,59,.55),
+            rgba(15,23,42,.65)
+        );
+
+    border:
+        1px solid
+        rgba(139,92,246,.08);
+
+    box-sizing: border-box;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.home-page .artist-card:hover {
+    transform:
+        translateY(-7px);
+
+    background:
+        rgba(139,92,246,.07);
+}
+
+
+/* =========================================================
+   ARTIST IMAGE
+   ========================================================= */
+
+.home-page .artist-image-wrapper {
+    position: relative;
+
+    width: 128px;
+    height: 128px;
+
+    margin:
+        0 auto 14px;
+
+    border-radius: 50%;
+}
+
+.home-page .artist-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        3px solid
+        rgba(139,92,246,.65);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(139,92,246,.08),
+
+        0 15px 35px
+        rgba(0,0,0,.35);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.home-page .artist-card:hover .artist-image {
+    transform:
+        scale(1.06);
+
+    border-color:
+        #a78bfa;
+
+    box-shadow:
+        0 0 0 7px
+        rgba(139,92,246,.10),
+
+        0 18px 40px
+        rgba(0,0,0,.45);
+}
+
+
+/* =========================================================
+   ARTIST PLAY BUTTON
+   ========================================================= */
+
+.home-page .artist-play {
+    position: absolute;
+
+    right: 2px;
+    bottom: 2px;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #ec4899
+        );
+
+    color: white;
+
+    font-size: 12px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,.4);
+
+    opacity: 0;
+
+    transform:
+        scale(.8);
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+}
+
+.home-page .artist-card:hover .artist-play {
+    opacity: 1;
+
+    transform:
+        scale(1);
+}
+
+
+/* =========================================================
+   ARTIST NAME
+   ========================================================= */
+
+.home-page .artist-card h3 {
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.home-page .artist-card p {
+    margin:
+        5px 0 0;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   ABOUT MUSICUNIVERSE
+   ========================================================= */
+
+.home-about {
+    width:
+        min(
+            1500px,
+            calc(100% - 72px)
+        );
+
+    margin:
+        35px auto 0;
+
+    padding:
+        55px 50px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(139,92,246,.18),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(236,72,153,.12),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            rgba(18,25,43,.98),
+            rgba(9,12,24,.98)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.28);
+}
+
+.home-about-content {
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 760px;
+}
+
+.home-about-kicker {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--purple-light);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .2em;
+}
+
+.home-about h2 {
+    margin:
+        0 0 16px;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size:
+        clamp(
+            30px,
+            4vw,
+            46px
+        );
+
+    letter-spacing:
+        -.03em;
+}
+
+.home-about h2 span {
+    background:
+        linear-gradient(
+            90deg,
+            #a78bfa,
+            #e879f9,
+            #f472b6
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.home-about p {
+    max-width: 680px;
+
+    margin: 0;
+
+    color: #aeb7ca;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ABOUT FEATURES
+   ========================================================= */
+
+.home-about-features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 18px;
+
+    margin-top: 35px;
+}
+
+.home-about-feature {
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,.06);
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+.home-about-feature:hover {
+    transform:
+        translateY(-5px);
+
+    background:
+        rgba(139,92,246,.08);
+}
+
+.home-about-feature-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 12px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(139,92,246,.12);
+
+    color:
+        var(--purple-light);
+
+    font-size: 18px;
+}
+
+.home-about-feature h3 {
+    margin:
+        0 0 7px;
+
+    font-size: 15px;
+}
+
+.home-about-feature p {
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.home-footer {
+    width:
+        min(
+            1500px,
+            calc(100% - 72px)
+        );
+
+    margin:
+        20px auto 0;
+
+    padding:
+        36px 0 150px;
+
+    border-top:
+        1px solid
+        var(--border);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    color:
+        var(--text-muted);
+
+    font-size: 12px;
+}
+
+.footer-brand {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.footer-brand strong {
+    color: white;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 15px;
+}
+
+.footer-brand span {
+    color:
+        var(--text-muted);
+}
+
+.home-footer-links {
+    display: flex;
+
+    gap: 25px;
+}
+
+.home-footer-links span {
+    cursor: pointer;
+
+    transition:
+        color .2s ease;
+}
+
+.home-footer-links span:hover {
+    color: white;
+}
+
+.footer-copy {
+    color:
+        var(--text-muted);
+}
+
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .hero-inner,
+    .home-section,
+    .home-footer {
+        width: calc(100% - 28px);
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-inner {
+        padding: 48px 0 40px;
+        gap: 30px;
+    }
+
+    .hero-copy {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-eyebrow {
+        font-size: 10px;
+        letter-spacing: .16em;
+        margin-bottom: 14px;
+    }
+
+    .hero-eyebrow::before {
+        width: 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(38px, 11vw, 48px);
+        line-height: 1;
+        letter-spacing: -.04em;
+    }
+
+    .hero-sub {
+        max-width: 100%;
+        margin: 20px 0 25px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* ---------- STATS ---------- */
+
+    .hero-stats {
+        width: 100%;
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    .hero-stat {
+        gap: 7px;
+    }
+
+    .hero-stat > svg {
+        font-size: 15px;
+    }
+
+    .hero-stat strong {
+        font-size: 17px;
+    }
+
+    .hero-stat span {
+        font-size: 10px;
+    }
+
+    .hero-stat-divider {
+        height: 25px;
+    }
+
+    /* ---------- NOW PLAYING ---------- */
+
+    .hero-now-playing {
+        margin-bottom: 22px;
+    }
+
+    /* ---------- BUTTONS ---------- */
+
+    .hero-actions {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero-btn {
+        padding: 12px 18px;
+        font-size: 13px;
+    }
+
+    .hero-secondary-btn {
+        padding: 11px 16px;
+        font-size: 13px;
+    }
+
+    /* ---------- HERO ART ---------- */
+
+    .hero-art-stack {
+        width: 260px;
+        height: 260px;
+
+        align-self: center;
+
+        transform: scale(.72);
+        transform-origin: center;
+
+        margin: -25px 0 -35px;
+    }
+
+    .hero-art-card {
+        width: 190px;
+        border-radius: 18px;
+    }
+
+    .orbit-one {
+        width: 260px;
+        height: 260px;
+    }
+
+    .orbit-two {
+        width: 200px;
+        height: 200px;
+        left: 30px;
+        top: 30px;
+    }
+
+    /* ---------- SECTIONS ---------- */
+
+    .home-section {
+        padding: 38px 0;
+    }
+
+    .section-header {
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    .section-title {
+        font-size: 21px;
+        gap: 8px;
+    }
+
+    .section-title svg {
+        font-size: 17px;
+    }
+
+    .section-count,
+    .section-link {
+        font-size: 11px;
+    }
+
+    /* ---------- SONG CARDS ---------- */
+
+    .home-page .song-row {
+        gap: 12px;
+        padding: 4px 2px 14px;
+    }
+
+    .home-page .song-row > .song-card {
+        flex: 0 0 190px;
+        width: 190px;
+        min-width: 190px;
+        max-width: 190px;
+    }
+
+    /* ---------- ARTISTS ---------- */
+
+    .home-page .artist-row {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 14px;
+
+        width: 100%;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding: 4px 2px 16px;
+    }
+
+    .home-page .artist-card {
+        flex: 0 0 125px;
+        width: 125px;
+        min-width: 125px;
+
+        padding: 14px 8px 13px;
+    }
+
+    .home-page .artist-image-wrapper {
+        width: 82px;
+        height: 82px;
+        margin-bottom: 10px;
+    }
+
+    .home-page .artist-play {
+        width: 28px;
+        height: 28px;
+        font-size: 10px;
+    }
+
+    .home-page .artist-card h3 {
+        font-size: 13px;
+    }
+
+    .home-page .artist-card p {
+        font-size: 10px;
+        margin-top: 4px;
+    }
+
+    /* ---------- GENRES ---------- */
+
+    .genre-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .genre-tile {
+        min-height: 110px;
+        padding: 15px;
+        border-radius: 16px;
+        font-size: 15px;
+    }
+
+    .genre-tile svg:first-child {
+        top: 15px;
+        left: 15px;
+        font-size: 22px;
+    }
+
+    /* ---------- ABOUT ---------- */
+
+    .home-about {
+        width: calc(100% - 28px);
+        margin-top: 20px;
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    .home-about h2 {
+        font-size: 28px;
+        line-height: 1.1;
+    }
+
+    .home-about p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .home-about-features {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 25px;
+    }
+
+    .home-about-feature {
+        padding: 16px;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    .home-footer {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 18px;
+
+        padding: 28px 0 120px;
+    }
+
+    .home-footer-links {
+        flex-wrap: wrap;
+        gap: 14px 20px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero-inner,
+    .home-section,
+    .home-footer {
+        width: calc(100% - 24px);
+    }
+
+    .hero-inner {
+        padding-top: 38px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-sub {
+        font-size: 13px;
+    }
+
+    .hero-stats {
+        gap: 9px;
+    }
+
+    .hero-stat strong {
+        font-size: 16px;
+    }
+
+    .hero-stat span {
+        font-size: 9px;
+    }
+
+    .hero-actions {
+        width: 100%;
+    }
+
+    .hero-btn,
+    .hero-secondary-btn {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .hero-art-stack {
+        width: 230px;
+        height: 230px;
+        transform: scale(.65);
+        margin-top: -20px;
+        margin-bottom: -40px;
+    }
+
+    .home-section {
+        padding: 32px 0;
+    }
+
+    .section-title {
+        font-size: 19px;
+    }
+
+    .home-page .song-row > .song-card {
+        flex-basis: 175px;
+        width: 175px;
+        min-width: 175px;
+        max-width: 175px;
+    }
+
+    .home-page .artist-card {
+        flex-basis: 115px;
+        width: 115px;
+        min-width: 115px;
+    }
+
+    .home-page .artist-image-wrapper {
+        width: 76px;
+        height: 76px;
+    }
+
+    .home-about {
+        width: calc(100% - 24px);
+        padding: 26px 17px;
+    }
+
+    .home-about h2 {
+        font-size: 25px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            .01ms !important;
+    }
+}
+
+/* =========================================================
+   MOBILE HERO FINAL FIX
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .hero-inner {
+        padding-top: 32px;
+        padding-bottom: 35px;
+    }
+
+    .hero-copy {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+        line-height: 1.02;
+        letter-spacing: -0.035em;
+    }
+
+    .hero-sub {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 18px 0 24px;
+    }
+
+    .hero-stats {
+        gap: 10px;
+        margin-bottom: 22px;
+    }
+
+    .hero-stat {
+        gap: 6px;
+    }
+
+    .hero-stat strong {
+        font-size: 16px;
+    }
+
+    .hero-stat span {
+        font-size: 9px;
+    }
+
+    .hero-stat > svg {
+        font-size: 14px;
+    }
+
+    .hero-stat-divider {
+        height: 24px;
+    }
+
+    .hero-actions {
+        flex-direction: row;
+        width: 100%;
+        gap: 9px;
+    }
+
+    .hero-btn,
+    .hero-secondary-btn {
+        justify-content: center;
+        padding: 11px 15px;
+        font-size: 12px;
+    }
+
+    /* Decorative artwork is hidden on phones */
+    .hero-art-stack {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero-inner {
+        width: calc(100% - 24px);
+        padding-top: 80px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-stats {
+        gap: 8px;
+    }
+
+    .hero-stat strong {
+        font-size: 15px;
+    }
+
+    .hero-stat span {
+        font-size: 8px;
+    }
+
+    .hero-btn,
+    .hero-secondary-btn {
+        padding: 10px 12px;
+        font-size: 11px;
+    }
+}
+.home-page {
+    overflow-x: hidden;
+}
+
+.home-section {
+    box-sizing: border-box;
+}
+/* Fix section title horizontal alignment */
+.home-page .section-title {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    transform: none !important;
+}
+.footer-copy {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.footer-creator {
+    color: var(--purple-light);
+    font-weight: 600;
+}
+/* =========================================================
+   FOOTER — BOTTOM POSITION
+   ========================================================= */
+

@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    background-color: #0f172a;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+
+/* ===========================
+   APP LAYOUT
+=========================== */
+
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Navbar must stay fixed in the layout */
+.app-layout > nav {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1000;
+}
+
+/* Main area */
+.app-main {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Page scrolling area */
+.page-content {
+    flex: 1;
+    min-height: 0;
+    min-width: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.page-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Queue */
+.queue-sidebar {
+    width: 380px;
+    height: 100%;
+    flex-shrink: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: #1b2235;
+}
+
+/* Home Page Scrollbar */
+.page-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.page-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.page-content::-webkit-scrollbar-thumb {
+    background: #3b445d;
+    border-radius: 10px;
+}
+
+.page-content::-webkit-scrollbar-thumb:hover {
+    background: #58627d;
+}
+
+.page-content {
+    scrollbar-width: thin;
+    scrollbar-color: #3b445d transparent;
+}
+
+/* =================================
+   RESPONSIVE APP LAYOUT
+================================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+    .queue-sidebar {
+        width: 320px;
+    }
+
+}
+
+
+/* Small Tablet / Large Mobile */
+@media (max-width: 768px) {
+
+    .app-main {
+        position: relative;
+    }
+
+    .queue-sidebar {
+        width: 300px;
+    }
+
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .app-main {
+        display: block;
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .page-content {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .queue-sidebar {
+        display: none;
+    }
+}
+@media (max-width: 600px) {
+    .page-content {
+        padding-bottom: 110px;
+    }
+}
+
+/* =========================================================
+   MOBILE NAVBAR OVERLAY FIX
+   ========================================================= */
+
+@media (max-width: 600px) {
+    .app-layout > nav {
+        background: #080d1b;
+    }
+}
+.login-required-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.login-required-popup {
+  width: min(380px, calc(100vw - 40px));
+  padding: 28px;
+  background: #111827;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.login-required-icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.login-required-popup h2 {
+  margin: 0 0 8px;
+  color: white;
+}
+
+.login-required-popup p {
+  margin: 0 0 22px;
+  color: #9ca3af;
+}
+
+.login-required-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.login-required-actions button {
+  border: none;
+  padding: 11px 22px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-required-actions .cancel-btn {
+  background: #1f2937;
+  color: #d1d5db;
+}

@@ -1,0 +1,261 @@
+/* =========================================
+   MUSICUNIVERSE AUTH PAGE
+========================================= */
+
+.auth-page {
+    min-height: calc(100vh - 76px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 120px;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(139, 92, 246, 0.16),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(236, 72, 153, 0.12),
+            transparent 35%
+        ),
+        #0f172a;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 430px;
+
+    padding: 42px 38px;
+
+    background: rgba(30, 41, 59, 0.92);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        0 0 40px rgba(139, 92, 246, 0.08);
+
+    backdrop-filter: blur(16px);
+
+    color: white;
+}
+
+.auth-card h1 {
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+
+    background: linear-gradient(
+        135deg,
+        #c084fc,
+        #a855f7,
+        #ec4899
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.auth-subtitle {
+    margin: 10px 0 30px;
+
+    text-align: center;
+
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.auth-card input {
+    width: 100%;
+    height: 52px;
+
+    padding: 0 16px;
+
+    border: 1px solid #334155;
+    border-radius: 12px;
+
+    outline: none;
+
+    background: #111827;
+    color: white;
+
+    font-size: 15px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.auth-card input::placeholder {
+    color: #64748b;
+}
+
+.auth-card input:focus {
+    border-color: #a855f7;
+
+    background: #151e30;
+
+    box-shadow:
+        0 0 0 3px rgba(168, 85, 247, 0.12);
+}
+
+/* =========================================
+   ERROR
+========================================= */
+
+.auth-error {
+    margin: 2px 0;
+
+    padding: 11px 13px;
+
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 10px;
+
+    background: rgba(239, 68, 68, 0.08);
+
+    color: #fca5a5;
+
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.auth-card button {
+    width: 100%;
+    height: 52px;
+
+    margin-top: 4px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #8b5cf6,
+        #a855f7,
+        #ec4899
+    );
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(139, 92, 246, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.auth-card button:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(168, 85, 247, 0.35);
+}
+
+.auth-card button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.auth-card button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   LOGIN / SIGNUP SWITCH
+========================================= */
+
+.auth-switch {
+    margin: 25px 0 0;
+
+    text-align: center;
+
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.auth-switch a {
+    color: #c084fc;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.auth-switch a:hover {
+    color: #f0abfc;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .auth-page {
+        min-height: calc(100vh - 70px);
+
+        padding: 25px 16px 120px;
+    }
+
+    .auth-card {
+        max-width: 100%;
+
+        padding: 32px 22px;
+
+        border-radius: 20px;
+    }
+
+    .auth-card h1 {
+        font-size: 29px;
+    }
+
+    .auth-subtitle {
+        margin-bottom: 25px;
+    }
+
+    .auth-card input,
+    .auth-card button {
+        height: 50px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .auth-card {
+        padding: 28px 18px;
+    }
+
+    .auth-card h1 {
+        font-size: 26px;
+    }
+}

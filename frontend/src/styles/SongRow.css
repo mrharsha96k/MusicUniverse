@@ -1,0 +1,214 @@
+
+.song-row {
+    display: grid;
+    grid-template-columns: 45px 70px minmax(250px, 1fr) 120px 110px;
+    align-items: center;
+    gap: 18px;
+
+    padding: 14px 18px;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.song-row:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Number / Play icon */
+
+.song-row-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #94a3b8;
+}
+
+.song-row-play {
+    display: none;
+    color: white;
+    font-size: 14px;
+}
+
+.song-row:hover .song-number {
+    display: none;
+}
+
+.song-row:hover .song-row-play {
+    display: block;
+}
+
+/* Album cover */
+
+.song-row-image {
+    width: 62px;
+    height: 62px;
+
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Song information */
+
+.song-row-info h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.song-row-info p {
+    margin-top: 5px;
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+/* Year + duration */
+
+.song-row-year,
+.song-row-duration {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.song-row-duration {
+    text-align: right;
+}
+
+/* Currently selected song */
+
+.active-song-row .song-row-info h3 {
+    color: #1DB954;
+}
+.featured-song-list {
+    width: 100%;
+    max-width: 1500px;
+}
+.song-list-header {
+    display: grid;
+    grid-template-columns: 45px 70px minmax(250px, 1fr) 120px 110px;
+    align-items: center;
+    gap: 18px;
+
+    padding: 0 18px 14px 18px;
+
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.song-list-header span:nth-child(4) {
+    text-align: center;
+}
+
+.song-list-header span:nth-child(5) {
+    text-align: right;
+}
+
+.song-row-year {
+    text-align: center;
+}
+
+.song-row-duration {
+    text-align: right;
+}
+/* =================================
+   ARTIST SONG ROWS
+================================= */
+
+.artist-page .featured-song-list {
+    width: 100%;
+    max-width: 1500px;
+    margin-top: 0;
+}
+
+/* Artist page uses no year column */
+.artist-page .song-row {
+    grid-template-columns: 45px 64px minmax(0, 1fr) 80px;
+
+    gap: 18px;
+
+    min-height: 72px;
+
+    padding: 8px 18px;
+
+    border-radius: 10px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Hide the empty year column */
+.artist-page .song-row-year {
+    display: none;
+}
+
+/* Album cover */
+.artist-page .song-row-image {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 8px;
+}
+
+/* Song information */
+.artist-page .song-row-info {
+    min-width: 0;
+}
+
+.artist-page .song-row-info h3 {
+    margin: 0;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.artist-page .song-row-info p {
+    margin: 4px 0 0;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Duration */
+.artist-page .song-row-duration {
+    text-align: right;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Hover */
+.artist-page .song-row:hover {
+    background: rgba(255, 255, 255, 0.055);
+}
+
+/* Currently playing */
+.artist-page .active-song-row {
+    background: rgba(168, 85, 247, 0.08);
+}
+
+.artist-page .active-song-row .song-row-info h3 {
+    color: #c084fc;
+}
+
+/* Better number */
+.artist-page .song-row-number {
+    color: #64748b;
+    font-size: 13px;
+}

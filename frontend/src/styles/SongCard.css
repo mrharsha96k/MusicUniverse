@@ -1,0 +1,131 @@
+.song-card {
+  width: 250px;
+  background-color: #1E293B;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.song-image{
+    position:relative;
+    overflow:hidden;
+    border-radius:18px;
+    width: 100%;
+}
+
+.song-image img{
+    width:100%;
+    display:block;
+    transition:.35s ease;
+}
+.play-overlay {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+
+    background: #1DB954;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    opacity: 0;
+
+    transition: opacity 0.35s ease;
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .35);
+}
+.song-card:hover .play-overlay{
+
+    opacity:1;
+}
+
+.song-card:hover .song-image img{
+
+    transform:scale(1.08);
+
+}
+
+.song-card h3 {
+  margin-top: 15px;
+  font-size: 22px;
+}
+
+.song-card p {
+  color: #B3B3B3;
+  margin: 10px 0;
+}
+
+.song-card button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #6c63ff;
+  color: white;
+  cursor: pointer;
+}
+.song-card:hover {
+  transform: translateY(-8px);
+  transition: 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 18px 35px rgba(0,0,0,.35);
+}
+
+.song-card img {
+  transition: 0.3s ease;
+}
+
+.song-card:hover img {
+  transform: scale(1.05);
+}
+
+.play-btn {
+  font-weight: bold;
+}
+.play-btn:hover {
+  background: #7c6cff;
+  transform: scale(1.08);
+  transition: 0.3s ease;
+}
+.song-card button:hover {
+  background: #8b5cf6;
+  transform: scale(1.08);
+  transition: 0.3s ease;
+}
+.song-card p:last-of-type {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+.song-genre {
+  color: #6c63ff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.song-year {
+  color: #94a3b8;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+.song-card {
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.song-card:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0,0,0,.4);
+}
