@@ -144,6 +144,47 @@ const uploadSong = async (req, res) => {
     }
 };
 
+// =====================================================
+// UPLOAD ALBUM IMAGE
+// =====================================================
+
+const uploadAlbumImage = async (req, res) => {
+    try {
+
+        const result = await cloudinary.uploader.upload(
+            req.file.path,
+            {
+                folder: "MusicUniverse/albums",
+            }
+        );
+
+        fs.unlink(req.file.path, (err) => {
+            if (err) {
+                console.error(
+                    "Failed to delete temp album image:",
+                    err
+                );
+            }
+        });
+
+        res.json({
+            message: "Album image uploaded successfully!",
+            imageUrl: result.secure_url,
+        });
+
+    } catch (error) {
+
+        console.error("Album image upload error:", error);
+
+        if (req.file?.path) {
+            fs.unlink(req.file.path, () => {});
+        }
+
+        res.status(500).json({
+            message: "Album image upload failed",
+        });
+    }
+};
 
 // =====================================================
 // EXPORT
@@ -152,4 +193,5 @@ const uploadSong = async (req, res) => {
 module.exports = {
     uploadImage,
     uploadSong,
+    uploadAlbumImage,
 };

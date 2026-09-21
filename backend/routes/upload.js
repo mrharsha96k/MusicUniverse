@@ -7,6 +7,7 @@ const upload = require("../middleware/upload");
 const {
     uploadImage,
     uploadSong,
+    uploadAlbumImage,
 } = require("../controllers/uploadController");
 
 
@@ -18,6 +19,17 @@ router.post(
     "/image",
     upload.single("image"),
     uploadImage
+);
+
+
+// =====================================================
+// UPLOAD ALBUM IMAGE
+// =====================================================
+
+router.post(
+    "/album-image",
+    upload.single("image"),
+    uploadAlbumImage
 );
 
 
